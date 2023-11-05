@@ -2,11 +2,17 @@
     "name": "Action script injection demo",
     "version": "1.0",
     "manifest_version": 3,
-    "action": {
-      "default_title": "Click to show an alert"
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'"
     },
-    "permissions": ["activeTab", "scripting"],
+    "action": {
+        "default_title": "Click to show an alert"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
     "background": {
-      "service_worker": "do.js"
+        "service_worker": "do.js"
     }
-  }
+}
